@@ -479,19 +479,36 @@
   <!-- SIMPLY COUNTDOWN -->
   <script src="countdown/simplyCountdown.min.js"></script>
   <script>
-    simplyCountdown(".simply-countdown", {
-      year: 2025, // required
-      month: 6, // required
-      day: 20, // required
-      hours: 8, // Default is 0 [0-23] integer
-      words: {
-        //words displayed into the countdown
-        days: { singular: "hari", plural: "hari" },
-        hours: { singular: "jam", plural: "jam" },
-        minutes: { singular: "menit", plural: "menit" },
-        seconds: { singular: "detik", plural: "detik" },
-      },
-    });
+    fetch("/config", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then((res) => res.json())
+    .then((res) => {
+      const year = res?.COUNTDOWN_YEAR;
+      const month = res?.COUNTDOWN_MONTH;
+      const day = res?.COUNTDOWN_DAY;
+      const hours = res?.COUNTDOWN_HOURS;
+
+      console.log(res);
+      console.log(year, month, day, hours);
+      
+  
+      simplyCountdown(".simply-countdown", {
+        year: parseInt(year),
+        month: parseInt(month),
+        day: parseInt(day),
+        hours: parseInt(hours),
+        words: {
+          days: { singular: "hari", plural: "hari" },
+          hours: { singular: "jam", plural: "jam" },
+          minutes: { singular: "menit", plural: "menit" },
+          seconds: { singular: "detik", plural: "detik" },
+        },
+      });
+    })
+    .catch((error) => console.log("Gagal mengambil konfigurasi countdown:", error));
   </script>
   <!-- JAVASCRIPT -->
   <!-- perbaikan bug offcanvas -->

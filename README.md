@@ -62,7 +62,9 @@ UNDANGAN-DIGITAL-V1/
 │     ├── chatbot.css                       # Styling Modal Chatbot 
 |     ├── style.css                         # File CSS utama
 │── .env                                    # File konfigurasi environment (API keys, dll)
-│── README.md                               # Dokumentasi proyek ini
+│── server.js                               # Main File untuk server express JS
+│── vercel.json                             # Konfigurasi untuk deploy di Vercel
+│── README.md                               # Dokumentasi proyek untuk Github
 │── package.json                            # Dependencies Node.js
 └── 
 ```
