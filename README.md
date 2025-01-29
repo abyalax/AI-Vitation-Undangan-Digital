@@ -28,7 +28,7 @@ Chatbot AI yang digunakan dalam proyek ini didukung oleh **Gemini 1.5 Flash 8B**
 | **Frontend**      | Vanilla **HTML, CSS, JavaScript** (tanpa framework) |
 | **Backend**       | **Express.js** (Node.js) untuk membuat request API AI Gemini dari sisi server |
 | **Chatbot AI**    | **Gemini 1.5 Flash 8B API** untuk pemrosesan percakapan otomatis |
-| **Hosting**       | Belum di host, next time host di platform free e.g **Vercel** |
+| **Hosting**       | Host di platform free Vercel, lihat preview [**disini**](https://ai-vitation-undangan-digital.vercel.app/?nama=Frenzy%20Ardian%20Kusumo&p=Bapak), |
 
 ---
 
