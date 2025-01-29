@@ -14,9 +14,7 @@ html {
 body {
     font-size: 1.2rem;
     font-family: 'Work Sans', sans-serif;
-    min-height: 4000px;
 }
-
 
 
 .hero::before {
@@ -69,12 +67,14 @@ body {
 }
 
 
-
-
 /* NAVBAR */
+.navbar {
+    z-index: 40!important;
+}
 .mynavbar {
     background-color: rgba(255, 255, 255, .3) !important;
     backdrop-filter: blur(4px);
+    z-index: 20;
 }
 
 .mynavbar .offcanvas {
@@ -99,7 +99,6 @@ body {
     background-image: url(img/florapattern.png);
     background-size: cover;
     min-height: 100vh;
-    margin-top: -7rem;
     padding-top: 15rem;
     padding-bottom: 5rem;
 }
@@ -425,7 +424,7 @@ footer li {
     font-size: 4rem;
     position: fixed;
     bottom: 2.5rem;
-    right: 2rem;
+    left: 2rem;
     cursor: pointer;
     color: white;
     opacity: 0.5;

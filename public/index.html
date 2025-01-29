@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Pernikahan</title>
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+  <!-- BOOTSTRAP ICONS  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/chatbot.css" />
+  <!-- FONT STYLE -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sacramento&family=Ubuntu:wght@300;400;700&family=Work+Sans:wght@100;400;600;700&display=swap"
+    rel="stylesheet" />
+  <!-- SIMPLY COUNT DOWN -->
+  <link rel="stylesheet" href="countdown/simplyCountdown.theme.default.css" />
+  <script src="./scripts/landing-page.js" defer></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR START-->
+    <nav class="navbar d-none w-100 navbar-expand-md bg-transparent position-fixed top-0 mynavbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">PreWedding</a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">PreWedding</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link" href="#home">Home</a>
+              <a class="nav-link" href="#info">Info</a>
+              <a class="nav-link" href="#story">Story</a>
+              <a class="nav-link" href="#gallery">Gallery</a>
+              <a class="nav-link" href="#rsvp">RSVP</a>
+              <a class="nav-link" href="#gifts">gifts</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- NAVBAR END-->
+
+  <!-- SECTION LANDING PAGE -->
+  <section id="hero"
+    class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-black">
+    <main>
+      <h4>Kepada <span id="nama">Bapak/Ibu/Saudara/i,</span></h4>
+      <!-- Konten lainnya -->
+      <h1>Abya & Putri Ningrat</h1>
+      <p>Akan melangsungkan resepsi pernikahan dalam:</p>
+      <div class="simply-countdown"></div>
+      <a href="#home" class="btn btn-lg mt-4" onclick="enableScroll()"> Lihat Undangan </a>
+      <!-- Script untuk mengambil parameter dari URL -->
+    </main>
+  </section>
+
+  <!-- CHATBOT START-->
+  <section>
+    <div class="position-fixed end-0 bottom-0 z-2 d-flex justify-content-center align-items-center h-100">
+      <div class="modal-container" id="modalOverlay">
+        <div id="modalContainer" class="position-chatbot d-none">
+          <div class="w-100">
+            <div class="d-flex justify-content-between">
+              <h4 class="text-lg-start fw-semibold">AI-vitation Chatbot</h4>
+              <div id="closeModalButton" class="text-lg-end cursor-pointer fw-bold fs-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+              </div>
+            </div>
+            <p class="text-sm text-sm-start text-wrap">
+              Tanyakan informasi seputar weddding dengan AI-vitation.
+            </p>
+            <div class="overflow-hidden">
+              <div id="chat-container" class="d-flex obrolan flex-column gap-3"></div>
+            </div>
+          </div>
+          <div class="d-flex flex-column w-100 justify-content-end align-items-center">
+            <form id="chatbot"
+              class="form-chatbot">
+              <input type="text" name="prompt" class='input-chatbot '
+                placeholder='Message...' />
+              <button type='submit' class='button-gemini'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
+                  class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5" />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div id="openModalIcon" class="z-3 cursor-pointer icon-chatbot">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#770034"
+            class="bi bi-robot cursor-pointer" viewBox="0 0 16 16">
+            <path
+              d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5M3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.6 26.6 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.93.93 0 0 1-.765.935c-.845.147-2.34.346-4.235.346s-3.39-.2-4.235-.346A.93.93 0 0 1 3 9.219zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a25 25 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25 25 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135" />
+            <path
+              d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2zM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CHATBOT END -->
+
+  <!-- SECTION HOME START -->
+  <section class="home" id="home">
+    <div class="container">
+
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <h2>Acara Pernikahan</h2>
+          <h3>Diselenggarakan pada 20 November 2024 di Bandung Jawa Barat.</h3>
+          <p>Oleh karena itu, dengan segala hormat, kami bermaksud mengundang Bapak/Ibu, Saudara/i, untuk hadir pada
+            acara pernikahan kami</p>
+        </div>
+      </div>
+
+      <!-- COUPLE -->
+      <div class="row couple ">
+        <div class="col-lg-6">
+          <div class="row">
+            <div class="col-8 text-end">
+              <h3>Abya Bahari Wafdulloh.S</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, quaerat tempora? Quos ullam
+                reiciendis cumque!</p>
+              <p>Putra dari Bpk. Lorem <br> dan <br> Ibu.Ipsum</p>
+            </div>
+            <div class="col-4">
+              <img src="img/man.jpg" alt="Abya" class="img-responsive rounded-circle">
+            </div>
+          </div>
+        </div>
+
+        <span class="heart"><i class="bi bi-heart-fill"></i></span>
+        <div class="col-lg-6">
+          <div class="row">
+            <div class="col-4">
+              <img src="img/woman.png" alt="Someone" class="img-responsive rounded-circle">
+            </div>
+            <div class="col-8 ">
+              <h3>Raden Kanjeng Putri</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, quaerat tempora? Quos ullam
+                reiciendis cumque!</p>
+              <p>Putri dari Bpk. Lorem <br> dan <br> Ibu.Ipsum</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- SECTION HOME END -->
+
+  <!-- INFO START  -->
+  <section class="info" id="info">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <h2>Informasi Acara</h2>
+          <p class="alamat"> Alamat: Gedung Kologdam, Kodiklat TNI AD. <br> Jl. Aceh, Merdeka Kec. Sumur Bandung, Kota
+            Bandung </p>
+
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.1524977061895!2d112.1330282!3d-7.666748999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78448645f19037%3A0x91db5ff36722f008!2sMasjid%20LDII%20Bringin!5e0!3m2!1sid!2sid!4v1707209471377!5m2!1sid!2sid"
+            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+          <a href="https://maps.app.goo.gl/Q99KQyZ4MYPBNGm28" target="_blank" class="btn btn-light btn-sm my-4">Klik
+            untuk membuka peta</a>
+          <p class="description">Diharapkan untuk tidak salah alamat dan tanggal. Manakala tiba ditujuan namun tidak ada
+            randa tanda sedang dilangsungkan pernikahan, boleh jadi anda salah tempat atau bahkan salah jadwal.</p>
+        </div>
+      </div>
+
+
+      <div class="row justify-content-center">
+        <div class="col-md-5 col-10">
+          <div class="card text-center text-bg-light mb-5">
+            <div class="card-header">
+              Akad Nikah
+            </div>
+            <div class="card-body">
+              <div class="row justify-content-center">
+                <div class="col-md-6">
+                  <i class="bi bi-clock d-block"></i>
+                  <span>08.00 - 10.00</span>
+                </div>
+                <div class="col-md-6">
+                  <i class="bi bi-calendar3 d-block"></i>
+                  <span>Minggu, 20 November 2024</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              Saat acara akad diharapkan untuk kondusif menjaga kekhidmatan seluruh acara presesi pernikahan.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 col-10">
+          <div class="card text-center text-bg-light">
+            <div class="card-header">
+              Resepsi
+            </div>
+            <div class="card-body">
+              <div class="row justify-content-center">
+                <div class="col-md-6">
+                  <i class="bi bi-clock d-block"></i>
+                  <span>11.00 - selesai</span>
+                </div>
+                <div class="col-md-6">
+                  <i class="bi bi-calendar3 d-block"></i>
+                  <span>Minggu, 20 November 2024</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              Saat acara akad diharapkan untuk kondusif menjaga kekhidmatan seluruh acara presesi pernikahan.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- INFO END  -->
+
+  <!-- STORY SECTION START -->
+  <section class="story" id="story">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <span>Bagaimana cinta Kami Bersemi</span>
+          <h2>Cerita Kami</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla dolorem illum quam voluptate! Aut,
+            voluptates.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <ul class="timeline">
+            <li>
+              <div class="timeline-image" style="background-image: url(img/sma.jpg);"></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h3>First Meet</h3>
+                  <span>1 Juni 2000</span>
+                </div>
+                <div class="timeline-body">
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil iure expedita animi ducimus
+                    accusantium cupiditate sequi, officia architecto voluptatem obcaecati!</p>
+                </div>
+
+              </div>
+            </li>
+            <li class="timeline-inverted">
+              <div class="timeline-image" style="background-image: url(https://picsum.photos/id/42/300/300
+                );"></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h3>Fisrt Date</h3>
+                  <span>1 Juli 2000</span>
+                </div>
+                <div class="timeline-body">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti autem, deleniti velit veritatis
+                    atque hic nulla aperiam voluptate?!</p>
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <div class="timeline-image" style="background-image: url(https://picsum.photos/id/129/300/300
+                );"></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h3>Senja Deep Talk </h3>
+                  <span>8 Agustus 2000</span>
+                </div>
+                <div class="timeline-body">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti autem, deleniti velit veritatis
+                    atque hic nulla aperiam voluptate?!</p>
+                </div>
+
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- STROY SECTION END -->
+
+
+  <!-- GALLERY START -->
+  <section id="gallery" class="gallery">
+    <div class="container">
+
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <span>Memori Kisah Kami</span>
+          <h2>Gallery Foto</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, facere.</p>
+        </div>
+      </div>
+
+      <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-col-1 justify-content-center">
+        <div class="col mt-3">
+          <a href="img/gallery/1.jpg" data-toggle="lightbox" data-gallery="mygallery" data-caption="1">
+            <img src="img/thumbnail/1.jpg" alt="gallery" class="'img-fluid w-100 rounded">
+          </a>
+        </div>
+        <div class="col mt-3">
+          <a href="img/gallery/2.jpg" data-toggle="lightbox" data-gallery="mygallery" data-caption="2">
+            <img src="img/thumbnail/2.jpg" alt="gallery" class="'img-fluid w-100 rounded">
+          </a>
+        </div>
+        <div class="col mt-3">
+          <a href="img/gallery/3.jpg" data-toggle="lightbox" data-gallery="mygallery" data-caption="3">
+            <img src="img/thumbnail/3.jpg" alt="gallery" class="'img-fluid w-100 rounded">
+          </a>
+        </div>
+        <div class="col mt-3">
+          <a href="img/gallery/4.jpg" data-toggle="lightbox" data-gallery="mygallery" data-caption="4">
+            <img src="img/thumbnail/4.jpg" alt="gallery" class="'img-fluid w-100 rounded">
+          </a>
+        </div>
+        <div class="col mt-3">
+          <a href="img/gallery/5.jpg" data-toggle="lightbox" data-gallery="mygallery" data-caption="5">
+            <img src="img/thumbnail/5.jpg" alt="gallery" class="'img-fluid w-100 rounded">
+          </a>
+        </div>
+        <div class="col mt-3">
+          <a href="img/gallery/6.jpg" data-toggle="lightbox" data-gallery="mygallery" data-caption="6">
+            <img src="img/thumbnail/6.jpg" alt="gallery" class="'img-fluid w-100 rounded">
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- GALLERY END -->
+
+  <!-- RSVP START -->
+  <section class="rsvp" id="rsvp">
+    <div class="container">
+
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <h2>Konfirmasi Keadiran</h2>
+          <p>Isi Form dibawah ini untuk mengkonfirmasi kehadiran</p>
+        </div>
+      </div>
+
+      <form class="row row-cols-md-auto g-3 justify-content-center align-items-center" method="POST"
+        action="https://script.google.com/macros/s/AKfycbz9hIeKhINicWeuQWkID74G8Tg_vXJ5N2FyLoVVrQISdtsmShWGvIqS6X0XdJbjeucZmQ/exec"
+        id="my-form">
+        <div class="col-12">
+          <div class="mb-3">
+            <label for="nama" class="form-label">Nama</label>
+            <input type="text" class="form-control" id="nama" name="nama">
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="mb-3">
+            <label for="jumlah" class="form-label">Jumlah</label>
+            <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" length="1" value="1">
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="mb-3">
+            <label for="status" class="form-label">Status</label>
+            <select name="status" id="status" class="form-select">
+              <option selected>Pilih salah satu</option>
+              <option value="Hadir">Hadir</option>
+              <option value="Tidak Hadir">Tidak Hadir</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-12" style="margin-top: 35px;">
+          <button class="btn btn-primary"> Kirim</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- RSVP END -->
+
+  <!-- GIFTS START -->
+  <section class="gifts" id="gifts">
+    <div class="container">
+
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <span>Ungkapan Tanda Kasih</span>
+          <h2>Kirim Hadiah</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore beatae rerum quidem ipsa ut autem soluta
+            iure tempora quaerat corrupti.</p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center text-center">
+        <div class="col-md-6">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="fw-bold">BCA</div>
+              3416236217 - Abya Bahari Wafdulloh
+            </li>
+            <li class="list-group-item">
+              <div class="fw-bold">Mandiri</div>
+              3416236217 - Abya Bahari Wafdulloh
+            </li>
+            <li class="list-group-item">
+              <div class="fw-bold">ShopeePay</div>
+              7382948324 - Abya Bahari Wafdulloh
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- GIFTS END -->
+
+
+  <!-- FOOTER START -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <small class="block">&copy; 2024 Wedding. All Right Reserved.</small>
+          <small class="block">Design by <a href="https://instagram.com/abya.xc">@abya.xc</a></small>
+
+          <ul class="mt-3">
+            <li><a href="https://instagram.com/abya.xc" class="bi bi-instagram"></a></li>
+            <li><a href="https://instagram.com/abya.xc" class="bi bi-tiktok"></a></li>
+            <li><a href="https://instagram.com/abya.xc" class="bi bi-youtube"></a></li>
+            <li><a href="https://api.whatsapp.com/send?phone=6287765290292&text=Hallo%20Abya%2C%20salam%20kenal%F0%9F%A4%97" class="bi bi-whatsapp"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- FOOTER END -->
+
+
+  <!-- BACKSOUND AUDIO START -->
+  <div id="audio-container">
+    <audio id="song" autoplay loop>
+      <source src="audio/sound.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="audio-icon-wrapper" style="display: none;">
+      <i class="bi bi-disc"></i>
+    </div>
+  </div>
+  <!-- BACKSOUND AUDIO END -->
+
+  <!-- BOOTSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <!-- LIGHTBOX-BOOTSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+  <!-- SIMPLY COUNTDOWN -->
+  <script src="countdown/simplyCountdown.min.js"></script>
+  <script>
+    simplyCountdown(".simply-countdown", {
+      year: 2025, // required
+      month: 6, // required
+      day: 20, // required
+      hours: 8, // Default is 0 [0-23] integer
+      words: {
+        //words displayed into the countdown
+        days: { singular: "hari", plural: "hari" },
+        hours: { singular: "jam", plural: "jam" },
+        minutes: { singular: "menit", plural: "menit" },
+        seconds: { singular: "detik", plural: "detik" },
+      },
+    });
+  </script>
+  <!-- JAVASCRIPT -->
+  <!-- perbaikan bug offcanvas -->
+  <script>
+    const stickyTop = document.querySelector('.sticky-top')
+    const offcanvas = document.querySelector('.offcanvas')
+
+    offcanvas.addEventListener('show.bs.offcanvas', function () {
+      stickyTop.style.overflow = 'visible'
+    })
+
+    offcanvas.addEventListener('hidden.bs.offcanvas', function () {
+      stickyTop.style.overflow = 'hidden'
+    })
+  </script>
+  <!-- kunci scroll -->
+  <script>
+    const rootElement = document.querySelector(':root')
+    const audioIconWrapper = document.querySelector('.audio-icon-wrapper')
+    const song = document.querySelector('#song')
+    const audioIcon = document.querySelector('.audio-icon-wrapper i')
+    const navbar = document.querySelector('nav')
+    let isPlaying = false
+
+    function disableScroll() {
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
+
+      window.onscroll = function () {
+        window.scrollTo(scrollTop, scrollLeft)
+      }
+
+      rootElement.style.scrollBehavior = 'auto'
+    }
+
+    function enableScroll() {
+      window.onscroll = function () { }
+      navbar.classList.remove('d-none')
+      rootElement.style.scrollBehavior = 'smooth'
+      playAudio()
+    }
+
+    function playAudio() {
+      song.volume = 0.8
+      audioIconWrapper.style.display = 'flex'
+      song.play()
+      isPlaying = true
+    }
+
+    audioIconWrapper.onclick = function () {
+      if (isPlaying) {
+        song.pause()
+        audioIcon.classList.remove('bi-disc')
+        audioIcon.classList.add('bi-pause-circle')
+      } else {
+        song.play()
+        audioIcon.classList.add('bi-disc')
+        audioIcon.classList.remove('bi-pause-circle')
+      }
+
+      isPlaying = !isPlaying
+    }
+    disableScroll()
+  </script>
+  <!-- Prevent redirect web Aplication -->
+  <script>
+    window.addEventListener("load", function () {
+      const form = document.getElementById('my-form');
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const data = new FormData(form);
+        const action = e.target.action;
+        fetch(action, {
+          method: 'POST',
+          body: data,
+        })
+          .then(() => {
+            alert("Konfirmasi Kehadiran Berhasil Dikirim! See you at the wedding");
+          })
+      });
+    });
+  </script>
+
+  <script src="./scripts/chatbot.js"></script>
+</body>
+
+</html>

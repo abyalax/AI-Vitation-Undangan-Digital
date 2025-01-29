@@ -1,0 +1,124 @@
+.modal-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+    gap: 4px;
+    padding-right: 1rem;
+    width: 400px;
+    height: 100%;
+}
+.modal {
+    width: 100%;
+}
+
+.position-chatbot {
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    position: absolute;
+    top: 14%;
+    bottom: 10%;
+    right: 20%;
+    z-index: 50;
+    max-height: 80vh;
+    width: 100%;
+}
+.rounded-full {
+    border-radius: 5rem;
+}
+.form-chatbot {
+    display: flex;
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #df4d8c;
+    border-radius: 5rem;
+    background-color: white;
+    width: 100%;
+}
+.input-chatbot {
+    padding: 4rem 2rem;
+    width: 100%;
+    text-align: start;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    border-radius: 5rem;
+    padding: 0.5rem;
+    font-size: 1rem
+}
+
+.input-chatbot:focus {
+    background-color: white;
+    outline: none;
+}
+
+.button-gemini {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #df4d8c;
+    color: white;
+    border: none;
+    border-radius: 2.2rem;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin-right: 0.3rem;
+}
+
+.button-gemini:hover {
+    background-color: #fa006c;
+}
+
+.icon-chatbot svg {
+    margin: 1rem 0;
+    width: 6rem;
+    height: 6rem;
+}
+
+.text-sm {
+    font-size: small;
+}
+
+
+.cursor-pointer:hover {
+    cursor: pointer;
+}
+
+.obrolan {
+    max-height: 55vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+@media screen and (max-width: 800px) {
+    .position-chatbot {
+        top: 6%;
+        bottom: 15%;
+        right: 10%;
+        max-height: 100vh;
+        width: 50vw;
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .modal-container {
+        width: 70vw;
+    }
+    .position-chatbot {
+        top: 8%;
+        bottom: 10%;
+        right: 2%;
+        left: -40%;
+        max-height: 100vh;
+        width: 90vw;
+        padding: 1rem;
+    }
+}
