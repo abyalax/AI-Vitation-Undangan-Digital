@@ -19,7 +19,7 @@
     position: absolute;
     top: 12%;
     bottom: 12%;
-    right:6%;
+    right: 12%;
     z-index: 50;
     max-height: 80vh;
     width: 400px;
@@ -52,6 +52,9 @@
     background-color: white;
     outline: none;
 }
+.user-chat, .bot-chat {
+    font-size: 1rem;
+}
 .button-gemini {
     display: flex;
     justify-content: center;
@@ -71,7 +74,7 @@
 }
 
 .icon-chatbot svg {
-    margin: 2rem;
+    margin: 1.5rem;
     width: 6rem;
     height: 6rem;
 }
@@ -95,7 +98,7 @@
     .position-chatbot {
         top: 6%;
         bottom: 15%;
-        right: 10%;
+        right: 15%;
         max-height: 100vh;
         width: 50vw;
         padding: 1rem;
@@ -120,5 +123,8 @@
         max-height: 100vh;
         width: 90vw;
         padding: 1rem;
+    }
+    .user-chat, .bot-chat {
+        font-size: 1.6rem;
     }
 }

@@ -15,6 +15,8 @@ app.get("/config", (req, res) => {
         COUNTDOWN_MONTH: process.env.COUNTDOWN_MONTH,
         COUNTDOWN_DAY: process.env.COUNTDOWN_DAY,
         COUNTDOWN_HOURS: process.env.COUNTDOWN_HOURS,
+        PENGANTIN_PRIA: process.env.PENGANTIN_PRIA,
+        PENGANTIN_WANITA: process.env.PENGANTIN_WANITA
     });
 });
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- meta data -->
   <meta charset="utf-8" />
@@ -16,18 +17,20 @@
   <!-- Open Graph Meta Tags (For Facebook, LinkedIn, etc.) -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="AI-vitation: Undangan Digital">
-  <meta property="og:description" content="Undangan Digital untuk acara pernikahan dan lainnya. Terintegrasi ChatBOT AI">
+  <meta property="og:description"
+    content="Undangan Digital untuk acara pernikahan dan lainnya. Terintegrasi ChatBOT AI">
   <meta property="og:url" content="https://ai-vitation-undangan-digital.vercel.app/">
-  <meta property="og:image" content="/img/banner.png"> <!-- Menggunakan path relatif ke public folder -->
+  <meta property="og:image" content="https://ai-vitation-undangan-digital.vercel.app/img/banner.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <!-- Twitter Card Meta Tags (For Twitter) -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AI-vitation: Undangan Digital">
-  <meta name="twitter:description" content="Undangan Digital untuk acara pernikahan dan lainnya. Terintegrasi ChatBOT AI">
+  <meta name="twitter:description"
+    content="Undangan Digital untuk acara pernikahan dan lainnya. Terintegrasi ChatBOT AI">
   <meta name="twitter:url" content="https://ai-vitation-undangan-digital.vercel.app/">
-  <meta name="twitter:image" content="/img/banner.png"> <!-- Menggunakan path relatif ke public folder -->
+  <meta name="twitter:image" content="https://ai-vitation-undangan-digital.vercel.app/img/banner.png">
 
   <!-- Favicon -->
   <link rel="icon" href="./img/icon.svg" type="image/svg+xml">
@@ -40,6 +43,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="./styles/style.css" />
   <link rel="stylesheet" href="./styles/chatbot.css" />
+  <link rel="stylesheet" href="./styles/landing-page.css" />
   <!-- FONT STYLE -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -83,10 +87,12 @@
   <!-- SECTION LANDING PAGE -->
   <section id="hero"
     class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-black">
-    <main>
+    <main class="mt-5">
       <h4>Kepada <span id="nama">Bapak/Ibu/Saudara/i,</span></h4>
       <!-- Konten lainnya -->
-      <h1 class="landing-pengantin">Putra & Selvy Rirantri</h1>
+      <h1 class="landing-pengantin pria" style="font-size: 4rem;"></h1>
+      <h1 class="landing-pengantin" style="font-size: 4rem;">&</h1>
+      <h1 class="landing-pengantin wanita" style="font-size: 4rem;"></h1>
       <p>Akan melangsungkan resepsi pernikahan dalam:</p>
       <div class="simply-countdown"></div>
       <a href="#home" class="btn btn-lg mt-4 z-3" onclick="enableScroll()"> Lihat Undangan </a>
@@ -96,8 +102,7 @@
 
   <!-- CHATBOT START-->
   <section>
-    <div id="modalContainer" class="d-none position-fixed end-0 bottom-0 w-100 h-100 bg-dark bg-opacity-50"
-      style="width: fit-content;">
+    <div id="modalContainer" class="d-none position-fixed end-0 bottom-0 w-100 h-100" style="width: fit-content;">
       <div class="modal-container" id="modalOverlay">
         <div class="position-chatbot">
           <div class="w-100">
@@ -135,7 +140,7 @@
     </div>
   </section>
   <div id="openModalIcon" class="position-fixed bottom-0 end-0 z-3 d-block cursor-pointer icon-chatbot">
-    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#770034" class="bi bi-robot cursor-pointer"
+    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="#770034" class="bi bi-robot cursor-pointer"
       viewBox="0 0 16 16">
       <path
         d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5M3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.6 26.6 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.93.93 0 0 1-.765.935c-.845.147-2.34.346-4.235.346s-3.39-.2-4.235-.346A.93.93 0 0 1 3 9.219zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a25 25 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25 25 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135" />
@@ -163,10 +168,10 @@
         <div class="col-lg-6">
           <div class="row">
             <div class="col-8 text-end">
-              <h3>Raden Putra Cipto Mangunkusumo</h3>
+              <h3 class="pria"></h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, quaerat tempora? Quos ullam
                 reiciendis cumque!</p>
-              <p>Putra dari Bpk. Lorem <br> dan <br> Ibu.Ipsum</p>
+              <p>Putra dari Bpk. Cipto <br> dan <br> Ibu Rantri</p>
             </div>
             <div class="col-4">
               <img src="img/man.jpg" alt="Abya" class="img-responsive rounded-circle">
@@ -181,7 +186,7 @@
               <img src="img/woman.png" alt="Someone" class="img-responsive rounded-circle">
             </div>
             <div class="col-8 ">
-              <h3>Raden Kanjeng Selvy Rirantri</h3>
+              <h3 class="wanita"></h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, quaerat tempora? Quos ullam
                 reiciendis cumque!</p>
               <p>Putri dari Bpk. Lorem <br> dan <br> Ibu.Ipsum</p>
@@ -513,6 +518,8 @@
       },
     }).then((res) => res.json())
       .then((res) => {
+        const pengantinPria = res?.PENGANTIN_PRIA;
+        const pengantinWanita = res?.PENGANTIN_WANITA;
         const year = res?.COUNTDOWN_YEAR;
         const month = res?.COUNTDOWN_MONTH;
         const day = res?.COUNTDOWN_DAY;
@@ -520,6 +527,18 @@
 
         console.log(res);
         console.log(year, month, day, hours);
+        console.log(pengantinPria, pengantinWanita);
+
+        const priaElements = document.querySelectorAll(".pria");
+        const wanitaElements = document.querySelectorAll(".wanita");
+
+        priaElements.forEach((element) => {
+          element.textContent = pengantinPria;
+        });
+
+        wanitaElements.forEach((element) => {
+          element.textContent = pengantinWanita;
+        });
 
         simplyCountdown(".simply-countdown", {
           year: parseInt(year),

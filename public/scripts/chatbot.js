@@ -64,11 +64,11 @@ window.addEventListener("load", function () {
                 <div class="d-flex ${msg.sender === "user" ? "justify-content-end" : "justify-content-start"}">
                 ${msg.sender === "user" ? `
                 <div style="width: fit-content;" class="bg-dark-subtle rounded-3 p-1">
-                    <p style="font-size: 1.5rem;" class="text-end">${msg.textMessage}</p>
+                    <p class="text-end user-chat">${msg.textMessage}</p>
                 </div>
                 ` : `
                 <div style="width: fit-content;" class="bg-success-subtle rounded-3 p-1">
-                    <p id="response-chatbot-${index}" style="font-size: 1.5rem;" class="text-start">${msg.textMessage}</p>
+                    <p id="response-chatbot-${index}" class="text-start bot-chat">${msg.textMessage}</p>
                 </div>
                 `}
                 </div>
@@ -79,7 +79,7 @@ window.addEventListener("load", function () {
         // Jalankan efek mengetik hanya untuk pesan terakhir yang dikirim oleh bot
         const lastBotMessageIndex = messages.findLastIndex(msg => msg.sender === "bot");
         if (lastBotMessageIndex !== -1) {
-            typeText(`response-chatbot-${lastBotMessageIndex}`, messages[lastBotMessageIndex].textMessage, 70);
+            typeText(`response-chatbot-${lastBotMessageIndex}`, messages[lastBotMessageIndex].textMessage, 30);
         }
     }
 
