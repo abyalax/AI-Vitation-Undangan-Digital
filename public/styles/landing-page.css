@@ -1,0 +1,9 @@
+.landing-pengantin {
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+    .landing-pengantin {
+        font-size: 0.2rem;
+    }
+}

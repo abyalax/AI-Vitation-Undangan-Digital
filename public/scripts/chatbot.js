@@ -1,3 +1,5 @@
+import { typeText } from "./typing.js"
+
 window.addEventListener("load", function () {
     const form = document.getElementById("chatbot");
     const chatContainer = document.getElementById("chat-container");
@@ -55,25 +57,30 @@ window.addEventListener("load", function () {
             }
         }
 
-        chatContainer.innerHTML = messages
-            .map((msg) => {
-                return `
-          <div class="message ${msg.sender === "user" ? "user-message" : "bot-message"}">
-            <div class="d-flex ${msg.sender === "user" ? "justify-content-end" : "justify-content-start"}">
-            ${msg.sender === "user" ? `
-              <div style="width: fit-content;" class="bg-dark-subtle rounded-3 p-1">
-                <p style="font-size: 1rem;" class="text-end">${msg.textMessage}</p>
-              </div>
-            ` : `
-              <div style="width: fit-content;" class="bg-success-subtle rounded-3 p-1">
-                <p style="font-size: 1rem;" class="text-start">${msg.textMessage}</p>
-              </div>
-            `}
+        // Tambahkan semua pesan ke chatContainer terlebih dahulu
+        chatContainer.innerHTML = messages.map((msg, index) => {
+            return `
+            <div class="message ${msg.sender === "user" ? "user-message" : "bot-message"}">
+                <div class="d-flex ${msg.sender === "user" ? "justify-content-end" : "justify-content-start"}">
+                ${msg.sender === "user" ? `
+                <div style="width: fit-content;" class="bg-dark-subtle rounded-3 p-1">
+                    <p style="font-size: 1.5rem;" class="text-end">${msg.textMessage}</p>
+                </div>
+                ` : `
+                <div style="width: fit-content;" class="bg-success-subtle rounded-3 p-1">
+                    <p id="response-chatbot-${index}" style="font-size: 1.5rem;" class="text-start">${msg.textMessage}</p>
+                </div>
+                `}
+                </div>
             </div>
-          </div>
-        `;
-            })
-            .join("");
+            `;
+        }).join("");
+
+        // Jalankan efek mengetik hanya untuk pesan terakhir yang dikirim oleh bot
+        const lastBotMessageIndex = messages.findLastIndex(msg => msg.sender === "bot");
+        if (lastBotMessageIndex !== -1) {
+            typeText(`response-chatbot-${lastBotMessageIndex}`, messages[lastBotMessageIndex].textMessage, 70);
+        }
     }
 
     loadChatHistory();

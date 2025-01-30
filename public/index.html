@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <!-- meta data -->
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Web Pernikahan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI-vitation: Undangan Digital">
+  <meta name="keywords" content="undangan, digital, invitation, wedding">
+  <meta name="author" content="abya">
+  <meta name="copyright" content="abya">
+
+  <!-- Google / Search Engine Tags -->
+  <meta name="generator" content="abya">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph Meta Tags (For Facebook, LinkedIn, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI-vitation: Undangan Digital">
+  <meta property="og:description" content="Undangan Digital untuk acara pernikahan dan lainnya. Terintegrasi ChatBOT AI">
+  <meta property="og:url" content="https://ai-vitation-undangan-digital.vercel.app/">
+  <meta property="og:image" content="/img/banner.png"> <!-- Menggunakan path relatif ke public folder -->
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card Meta Tags (For Twitter) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI-vitation: Undangan Digital">
+  <meta name="twitter:description" content="Undangan Digital untuk acara pernikahan dan lainnya. Terintegrasi ChatBOT AI">
+  <meta name="twitter:url" content="https://ai-vitation-undangan-digital.vercel.app/">
+  <meta name="twitter:image" content="/img/banner.png"> <!-- Menggunakan path relatif ke public folder -->
+
+  <!-- Favicon -->
+  <link rel="icon" href="./img/icon.svg" type="image/svg+xml">
+  <title>AI-vitation: Undangan Digital</title>
   <!-- BOOTSTRAP -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-
   <!-- BOOTSTRAP ICONS  -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
   <!-- CSS -->
   <link rel="stylesheet" href="./styles/style.css" />
   <link rel="stylesheet" href="./styles/chatbot.css" />
@@ -27,34 +52,33 @@
 </head>
 
 <body>
-
-    <!-- NAVBAR START-->
-    <nav class="navbar d-none w-100 navbar-expand-md bg-transparent position-fixed top-0 mynavbar">
-      <div class="container">
-        <a class="navbar-brand" href="#">PreWedding</a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-          aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">PreWedding</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <div class="navbar-nav ms-auto">
-              <a class="nav-link" href="#home">Home</a>
-              <a class="nav-link" href="#info">Info</a>
-              <a class="nav-link" href="#story">Story</a>
-              <a class="nav-link" href="#gallery">Gallery</a>
-              <a class="nav-link" href="#rsvp">RSVP</a>
-              <a class="nav-link" href="#gifts">gifts</a>
-            </div>
+  <!-- NAVBAR START-->
+  <nav class="navbar d-none w-100 navbar-expand-md bg-transparent position-fixed top-0 mynavbar">
+    <div class="container">
+      <a class="navbar-brand" href="#">PreWedding</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">PreWedding</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="#home">Home</a>
+            <a class="nav-link" href="#info">Info</a>
+            <a class="nav-link" href="#story">Story</a>
+            <a class="nav-link" href="#gallery">Gallery</a>
+            <a class="nav-link" href="#rsvp">RSVP</a>
+            <a class="nav-link" href="#gifts">gifts</a>
           </div>
         </div>
       </div>
-    </nav>
-    <!-- NAVBAR END-->
+    </div>
+  </nav>
+  <!-- NAVBAR END-->
 
   <!-- SECTION LANDING PAGE -->
   <section id="hero"
@@ -62,25 +86,28 @@
     <main>
       <h4>Kepada <span id="nama">Bapak/Ibu/Saudara/i,</span></h4>
       <!-- Konten lainnya -->
-      <h1>Abya & Putri Ningrat</h1>
+      <h1 class="landing-pengantin">Putra & Selvy Rirantri</h1>
       <p>Akan melangsungkan resepsi pernikahan dalam:</p>
       <div class="simply-countdown"></div>
-      <a href="#home" class="btn btn-lg mt-4" onclick="enableScroll()"> Lihat Undangan </a>
+      <a href="#home" class="btn btn-lg mt-4 z-3" onclick="enableScroll()"> Lihat Undangan </a>
       <!-- Script untuk mengambil parameter dari URL -->
     </main>
   </section>
 
   <!-- CHATBOT START-->
   <section>
-    <div class="position-fixed end-0 bottom-0 z-2 d-flex justify-content-center align-items-center h-100">
+    <div id="modalContainer" class="d-none position-fixed end-0 bottom-0 w-100 h-100 bg-dark bg-opacity-50"
+      style="width: fit-content;">
       <div class="modal-container" id="modalOverlay">
-        <div id="modalContainer" class="position-chatbot d-none">
+        <div class="position-chatbot">
           <div class="w-100">
             <div class="d-flex justify-content-between">
-              <h4 class="text-lg-start fw-semibold">AI-vitation Chatbot</h4>
+              <h4 class="chatbot-title">AI-vitation Chatbot</h4>
               <div id="closeModalButton" class="text-lg-end cursor-pointer fw-bold fs-5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-x"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
                 </svg>
               </div>
             </div>
@@ -92,10 +119,8 @@
             </div>
           </div>
           <div class="d-flex flex-column w-100 justify-content-end align-items-center">
-            <form id="chatbot"
-              class="form-chatbot">
-              <input type="text" name="prompt" class='input-chatbot '
-                placeholder='Message...' />
+            <form id="chatbot" class="form-chatbot">
+              <input type="text" name="prompt" class='input-chatbot ' placeholder='Message...' />
               <button type='submit' class='button-gemini'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
                   class="bi bi-arrow-up-short" viewBox="0 0 16 16">
@@ -106,18 +131,18 @@
             </form>
           </div>
         </div>
-        <div id="openModalIcon" class="z-3 cursor-pointer icon-chatbot">
-          <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#770034"
-            class="bi bi-robot cursor-pointer" viewBox="0 0 16 16">
-            <path
-              d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5M3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.6 26.6 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.93.93 0 0 1-.765.935c-.845.147-2.34.346-4.235.346s-3.39-.2-4.235-.346A.93.93 0 0 1 3 9.219zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a25 25 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25 25 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135" />
-            <path
-              d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2zM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5" />
-          </svg>
-        </div>
       </div>
     </div>
   </section>
+  <div id="openModalIcon" class="position-fixed bottom-0 end-0 z-3 d-block cursor-pointer icon-chatbot">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#770034" class="bi bi-robot cursor-pointer"
+      viewBox="0 0 16 16">
+      <path
+        d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5M3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.6 26.6 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.93.93 0 0 1-.765.935c-.845.147-2.34.346-4.235.346s-3.39-.2-4.235-.346A.93.93 0 0 1 3 9.219zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a25 25 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25 25 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135" />
+      <path
+        d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2zM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5" />
+    </svg>
+  </div>
   <!-- CHATBOT END -->
 
   <!-- SECTION HOME START -->
@@ -138,7 +163,7 @@
         <div class="col-lg-6">
           <div class="row">
             <div class="col-8 text-end">
-              <h3>Abya Bahari Wafdulloh.S</h3>
+              <h3>Raden Putra Cipto Mangunkusumo</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, quaerat tempora? Quos ullam
                 reiciendis cumque!</p>
               <p>Putra dari Bpk. Lorem <br> dan <br> Ibu.Ipsum</p>
@@ -156,7 +181,7 @@
               <img src="img/woman.png" alt="Someone" class="img-responsive rounded-circle">
             </div>
             <div class="col-8 ">
-              <h3>Raden Kanjeng Putri</h3>
+              <h3>Raden Kanjeng Selvy Rirantri</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, quaerat tempora? Quos ullam
                 reiciendis cumque!</p>
               <p>Putri dari Bpk. Lorem <br> dan <br> Ibu.Ipsum</p>
@@ -419,15 +444,15 @@
           <ul class="list-group">
             <li class="list-group-item">
               <div class="fw-bold">BCA</div>
-              3416236217 - Abya Bahari Wafdulloh
+              3416236217 - Putra Cipto Mangunkusumo
             </li>
             <li class="list-group-item">
               <div class="fw-bold">Mandiri</div>
-              3416236217 - Abya Bahari Wafdulloh
+              3416236217 - Putra Cipto Mangunkusumo
             </li>
             <li class="list-group-item">
               <div class="fw-bold">ShopeePay</div>
-              7382948324 - Abya Bahari Wafdulloh
+              7382948324 - Putra Cipto Mangunkusumo
             </li>
           </ul>
         </div>
@@ -449,7 +474,9 @@
             <li><a href="https://instagram.com/abya.xc" class="bi bi-instagram"></a></li>
             <li><a href="https://instagram.com/abya.xc" class="bi bi-tiktok"></a></li>
             <li><a href="https://instagram.com/abya.xc" class="bi bi-youtube"></a></li>
-            <li><a href="https://api.whatsapp.com/send?phone=6287765290292&text=Hallo%20Abya%2C%20salam%20kenal%F0%9F%A4%97" class="bi bi-whatsapp"></a></li>
+            <li><a
+                href="https://api.whatsapp.com/send?phone=6287765290292&text=Hallo%20Abya%2C%20salam%20kenal%F0%9F%A4%97"
+                class="bi bi-whatsapp"></a></li>
           </ul>
         </div>
       </div>
@@ -480,34 +507,34 @@
   <script src="countdown/simplyCountdown.min.js"></script>
   <script>
     fetch("/config", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then((res) => res.json())
-    .then((res) => {
-      const year = res?.COUNTDOWN_YEAR;
-      const month = res?.COUNTDOWN_MONTH;
-      const day = res?.COUNTDOWN_DAY;
-      const hours = res?.COUNTDOWN_HOURS;
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json())
+      .then((res) => {
+        const year = res?.COUNTDOWN_YEAR;
+        const month = res?.COUNTDOWN_MONTH;
+        const day = res?.COUNTDOWN_DAY;
+        const hours = res?.COUNTDOWN_HOURS;
 
-      console.log(res);
-      console.log(year, month, day, hours);
-      
-      simplyCountdown(".simply-countdown", {
-        year: parseInt(year),
-        month: parseInt(month),
-        day: parseInt(day),
-        hours: parseInt(hours),
-        words: {
-          days: { singular: "hari", plural: "hari" },
-          hours: { singular: "jam", plural: "jam" },
-          minutes: { singular: "menit", plural: "menit" },
-          seconds: { singular: "detik", plural: "detik" },
-        },
-      });
-    })
-    .catch((error) => console.log("Gagal mengambil konfigurasi countdown:", error));
+        console.log(res);
+        console.log(year, month, day, hours);
+
+        simplyCountdown(".simply-countdown", {
+          year: parseInt(year),
+          month: parseInt(month),
+          day: parseInt(day),
+          hours: parseInt(hours),
+          words: {
+            days: { singular: "hari", plural: "hari" },
+            hours: { singular: "jam", plural: "jam" },
+            minutes: { singular: "menit", plural: "menit" },
+            seconds: { singular: "detik", plural: "detik" },
+          },
+        });
+      })
+      .catch((error) => console.log("Gagal mengambil konfigurasi countdown:", error));
   </script>
   <!-- JAVASCRIPT -->
   <!-- perbaikan bug offcanvas -->
@@ -591,7 +618,7 @@
     });
   </script>
 
-  <script src="./scripts/chatbot.js"></script>
+  <script type="module" src="./scripts/chatbot.js"></script>
 </body>
 
 </html>

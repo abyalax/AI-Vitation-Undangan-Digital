@@ -10,4 +10,4 @@ document.addEventListener("DOMContentLoaded", () => {
     namaContainer.innerText = `${pronoun} ${nama}`.replace(/ ,$/, ','); // Menambahkan sapaan dan nama
   }
 });
-// contoh url http://localhost:3000/?nama=Frenzy%20Ardian%20Kusumo&p=Bapak#rsvp
+// contoh url http://localhost:3000/index.html?nama=Frenzy%20Ardian%20Kusumo&p=Bapak#rsvp
