@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import geminiRoute from "./api/gemini.js";
+import configRoute from "./api/config.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -8,19 +9,8 @@ const PORT = process.env.PORT || 3000;
 // Serve file statis (HTML, CSS, JS)
 app.use(express.static("public"));
 
-// Endpoint untuk membaca ENV
-app.get("/config", (req, res) => {
-    res.json({
-        COUNTDOWN_YEAR: process.env.COUNTDOWN_YEAR,
-        COUNTDOWN_MONTH: process.env.COUNTDOWN_MONTH,
-        COUNTDOWN_DAY: process.env.COUNTDOWN_DAY,
-        COUNTDOWN_HOURS: process.env.COUNTDOWN_HOURS,
-        PENGANTIN_PRIA: process.env.PENGANTIN_PRIA,
-        PENGANTIN_WANITA: process.env.PENGANTIN_WANITA
-    });
-});
-
 app.use("/api/gemini", geminiRoute);
+app.use("/api/config", configRoute);
 
 // Jalankan server
 app.listen(PORT, () => {
